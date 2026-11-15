@@ -231,6 +231,94 @@ p { margin: 0 0 1em; }
   .whatsapp-float::after { animation: none; }
 }
 
+/* ===== Visual moderno ===== */
+:root {
+  --radius: 20px;
+  --accent-grad: linear-gradient(90deg, var(--blue) 0%, #e2453b 55%, var(--blue-vivid) 100%);
+  --shadow: 0 1px 2px rgba(18,31,69,.04), 0 12px 32px rgba(18,31,69,.07);
+}
+body { font-family: "Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif; }
+h1, h2, h3, h4 { font-weight: 800; letter-spacing: -.02em; }
+h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1.12; }
+.hero h1 { font-size: clamp(2.2rem, 5.4vw, 3.8rem); line-height: 1.05; letter-spacing: -.03em; }
+
+/* Topo translúcido com desfoque */
+.header {
+  background: rgba(18,31,69,.82);
+  -webkit-backdrop-filter: saturate(160%) blur(14px); backdrop-filter: saturate(160%) blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.logo-mark { border-radius: 12px; background: linear-gradient(135deg, var(--blue), #e2453b); box-shadow: 0 6px 16px rgba(176,24,63,.35); }
+
+/* Banner com grade sutil e destaque em degradê */
+.hero { padding: calc(var(--header-h) + 100px) 0 110px; }
+.hero::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(ellipse at 70% 30%, #000 10%, transparent 70%); mask-image: radial-gradient(ellipse at 70% 30%, #000 10%, transparent 70%);
+}
+.hero h1 span { background: linear-gradient(90deg, var(--blue-vivid), #ff8a3d); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.tag { -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+.tag::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--blue-vivid); margin-right: 8px; vertical-align: 1px; box-shadow: 0 0 0 4px rgba(255,201,6,.2); }
+.hero-card { border-radius: 28px; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 30px 60px rgba(0,0,0,.25); }
+
+/* Botões */
+.btn { border-radius: 14px; font-weight: 700; letter-spacing: -.01em; }
+.btn:active { transform: translateY(0) scale(.98); }
+
+/* Seções */
+.section { padding: 110px 0; }
+.section-light { background: linear-gradient(180deg, #f6f7fb 0%, #eef0f7 100%); }
+.section-dark { background: radial-gradient(circle at 10% 0%, rgba(176,24,63,.25), transparent 40%), var(--navy); }
+.eyebrow {
+  padding: 6px 14px; border-radius: 999px; letter-spacing: 1.2px; font-size: .75rem;
+  background: rgba(176,24,63,.08); border: 1px solid rgba(176,24,63,.15);
+}
+.eyebrow-light { background: rgba(255,201,6,.1); border-color: rgba(255,201,6,.25); }
+
+/* Ícones em degradê */
+.icon { border-radius: 16px; background: linear-gradient(135deg, rgba(176,24,63,.1), rgba(255,201,6,.12)); }
+.icon-solid { background: linear-gradient(135deg, var(--blue), #e2453b); box-shadow: 0 8px 20px rgba(176,24,63,.3); }
+
+/* Cards com faixa de destaque no hover */
+.card, .feature { position: relative; overflow: hidden; border-color: rgba(18,31,69,.07); }
+.card::before, .feature::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px;
+  background: var(--accent-grad); transform: scaleX(0); transform-origin: left; transition: transform .35s ease;
+}
+.card:hover::before, .feature:hover::before { transform: scaleX(1); }
+.card:hover { border-color: rgba(18,31,69,.07); box-shadow: 0 24px 48px rgba(18,31,69,.12); }
+.feature { box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s; }
+.feature:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(18,31,69,.1); }
+
+/* Regiões em vidro */
+.region { border-radius: 18px; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); transition: background .25s, transform .25s; }
+.region:hover { background: rgba(255,255,255,.1); transform: translateX(4px); }
+
+/* Formulário e mapa */
+.form { border-radius: 28px; border: 1px solid rgba(18,31,69,.06); box-shadow: 0 30px 60px rgba(18,31,69,.1); }
+.field input, .field select, .field textarea { border-radius: 12px; }
+.checks li::before { background: linear-gradient(135deg, var(--blue), #e2453b); }
+.map { border-radius: 28px; border: 1px solid rgba(18,31,69,.06); }
+
+/* Rodapé com faixa de cor */
+.footer { position: relative; }
+.footer::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--accent-grad); }
+
+@media (max-width: 640px) {
+  .section { padding: 64px 0; }
+  .hero { padding: calc(var(--header-h) + 44px) 0 60px; }
+  .hero h1 { font-size: 2.15rem; }
+  h2 { font-size: 1.65rem; }
+  .card, .feature { border-radius: 18px; }
+  .form, .map { border-radius: 20px; }
+  .feature:hover, .region:hover { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card::before, .feature::before, .feature, .region { transition: none; }
+}
+
 /* ===== Responsivo ===== */
 @media (max-width: 960px) {
   .hero-inner, .about, .area, .quote, .contact { grid-template-columns: 1fr; gap: 36px; }
@@ -257,7 +345,7 @@ p { margin: 0 0 1em; }
 /* ===== Marca d'água de caminhão ===== */
 :root {
   --truck-svg-white: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 260'%3E%3Cpath fill='%23ffffff' fill-rule='evenodd' d='M0 28h400v152H0z M412 78h104l56 62v40H412z M428 92h80l40 44H428z M418 40h8v38h-8z M0 180h590v16H0z M274 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M291 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M332 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M349 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M419 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M436 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M474 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M491 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M530 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M547 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z'/%3E%3C/svg%3E");
-  --truck-svg-blue: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 260'%3E%3Cpath fill='%231d5fbf' fill-rule='evenodd' d='M0 28h400v152H0z M412 78h104l56 62v40H412z M428 92h80l40 44H428z M418 40h8v38h-8z M0 180h590v16H0z M274 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M291 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M332 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M349 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M419 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M436 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M474 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M491 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M530 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M547 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z'/%3E%3C/svg%3E");
+  --truck-svg-blue: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 260'%3E%3Cpath fill='%23121f45' fill-rule='evenodd' d='M0 28h400v152H0z M412 78h104l56 62v40H412z M428 92h80l40 44H428z M418 40h8v38h-8z M0 180h590v16H0z M274 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M291 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M332 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M349 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M419 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M436 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M474 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M491 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M530 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M547 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z'/%3E%3C/svg%3E");
 }
 .hero, #orcamento { position: relative; overflow: hidden; }
 .hero > .container, #orcamento > .container { position: relative; z-index: 1; }
