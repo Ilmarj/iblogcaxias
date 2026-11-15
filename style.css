@@ -250,6 +250,30 @@ p { margin: 0 0 1em; }
   .nav .btn { margin-top: 14px; }
 }
 
+/* ===== Marca d'água de caminhão ===== */
+:root {
+  --truck-svg-white: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 260'%3E%3Cpath fill='%23ffffff' fill-rule='evenodd' d='M0 28h400v152H0z M412 78h104l56 62v40H412z M428 92h80l40 44H428z M418 40h8v38h-8z M0 180h590v16H0z M274 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M291 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M332 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M349 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M419 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M436 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M474 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M491 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M530 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M547 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z'/%3E%3C/svg%3E");
+  --truck-svg-blue: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 260'%3E%3Cpath fill='%231d5fbf' fill-rule='evenodd' d='M0 28h400v152H0z M412 78h104l56 62v40H412z M428 92h80l40 44H428z M418 40h8v38h-8z M0 180h590v16H0z M274 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M291 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M332 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M349 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M419 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M436 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M474 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M491 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M530 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M547 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z'/%3E%3C/svg%3E");
+}
+.hero, #orcamento { position: relative; overflow: hidden; }
+.hero > .container, #orcamento > .container { position: relative; z-index: 1; }
+.hero::before, #orcamento::before {
+  content: ""; position: absolute; pointer-events: none; z-index: 0;
+  aspect-ratio: 600 / 260; background-repeat: no-repeat; background-size: contain; background-position: center;
+}
+.hero::before {
+  background-image: var(--truck-svg-white); opacity: .07;
+  width: min(780px, 70%); right: 3%; bottom: 24px;
+}
+#orcamento::before {
+  background-image: var(--truck-svg-blue); opacity: .06;
+  width: min(720px, 80%); left: -6%; bottom: 30px;
+}
+@media (max-width: 640px) {
+  .hero::before { width: 92%; right: 4%; bottom: 20px; opacity: .08; }
+  #orcamento::before { width: 130%; left: -15%; top: 60px; bottom: auto; }
+}
+
 /* Evita rolagem lateral e itens de grid estourando */
 html, body { overflow-x: clip; }
 .hero-inner > *, .about > *, .area > *, .quote > *, .contact > *, .cards > *, .features > *, .footer-inner > * { min-width: 0; }
