@@ -14,7 +14,7 @@
   --border: #dfe2ec;
   --white: #ffffff;
   --radius: 14px;
-  --shadow: 0 10px 30px rgba(18, 31, 69, .08);
+  --shadow: 0 10px 30px rgba(5,7,13, .08);
   --header-h: 72px;
 }
 
@@ -139,7 +139,7 @@ p { margin: 0 0 1em; }
   box-shadow: var(--shadow); border: 1px solid var(--border);
   transition: transform .25s, box-shadow .25s, border-color .25s;
 }
-.card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(18,31,69,.12); border-color: var(--blue-soft); }
+.card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(5,7,13,.12); border-color: var(--blue-soft); }
 .card .icon { margin-bottom: 18px; }
 .card p { color: var(--gray); margin: 0; }
 
@@ -212,7 +212,7 @@ p { margin: 0 0 1em; }
   position: fixed; right: 22px; bottom: calc(22px + env(safe-area-inset-bottom, 0px)); z-index: 200;
   width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center;
   background: var(--whatsapp); color: var(--white);
-  box-shadow: 0 8px 24px rgba(18,31,69,.35); transition: transform .2s, background .2s;
+  box-shadow: 0 8px 24px rgba(5,7,13,.35); transition: transform .2s, background .2s;
 }
 .whatsapp-float svg { width: 32px; height: 32px; }
 .whatsapp-float:hover { transform: scale(1.08); background: var(--whatsapp-hover); }
@@ -235,7 +235,7 @@ p { margin: 0 0 1em; }
 :root {
   --radius: 20px;
   --accent-grad: linear-gradient(90deg, var(--blue) 0%, #e2453b 55%, var(--blue-vivid) 100%);
-  --shadow: 0 1px 2px rgba(18,31,69,.04), 0 12px 32px rgba(18,31,69,.07);
+  --shadow: 0 1px 2px rgba(5,7,13,.04), 0 12px 32px rgba(5,7,13,.07);
 }
 body { font-family: "Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif; }
 h1, h2, h3, h4 { font-weight: 800; letter-spacing: -.02em; }
@@ -244,7 +244,7 @@ h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1.12; }
 
 /* Topo translúcido com desfoque */
 .header {
-  background: rgba(18,31,69,.82);
+  background: rgba(5,7,13,.82);
   -webkit-backdrop-filter: saturate(160%) blur(14px); backdrop-filter: saturate(160%) blur(14px);
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
@@ -282,25 +282,25 @@ h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1.12; }
 .icon-solid { background: linear-gradient(135deg, var(--blue), #e2453b); box-shadow: 0 8px 20px rgba(176,24,63,.3); }
 
 /* Cards com faixa de destaque no hover */
-.card, .feature { position: relative; overflow: hidden; border-color: rgba(18,31,69,.07); }
+.card, .feature { position: relative; overflow: hidden; border-color: rgba(5,7,13,.07); }
 .card::before, .feature::before {
   content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px;
   background: var(--accent-grad); transform: scaleX(0); transform-origin: left; transition: transform .35s ease;
 }
 .card:hover::before, .feature:hover::before { transform: scaleX(1); }
-.card:hover { border-color: rgba(18,31,69,.07); box-shadow: 0 24px 48px rgba(18,31,69,.12); }
+.card:hover { border-color: rgba(5,7,13,.07); box-shadow: 0 24px 48px rgba(5,7,13,.12); }
 .feature { box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s; }
-.feature:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(18,31,69,.1); }
+.feature:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(5,7,13,.1); }
 
 /* Regiões em vidro */
 .region { border-radius: 18px; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); transition: background .25s, transform .25s; }
 .region:hover { background: rgba(255,255,255,.1); transform: translateX(4px); }
 
 /* Formulário e mapa */
-.form { border-radius: 28px; border: 1px solid rgba(18,31,69,.06); box-shadow: 0 30px 60px rgba(18,31,69,.1); }
+.form { border-radius: 28px; border: 1px solid rgba(5,7,13,.06); box-shadow: 0 30px 60px rgba(5,7,13,.1); }
 .field input, .field select, .field textarea { border-radius: 12px; }
 .checks li::before { background: linear-gradient(135deg, var(--blue), #e2453b); }
-.map { border-radius: 28px; border: 1px solid rgba(18,31,69,.06); }
+.map { border-radius: 28px; border: 1px solid rgba(5,7,13,.06); }
 
 /* Rodapé com faixa de cor */
 .footer { position: relative; }
@@ -345,7 +345,7 @@ h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1.12; }
 /* ===== Marca d'água de caminhão ===== */
 :root {
   --truck-svg-white: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 260'%3E%3Cpath fill='%23ffffff' fill-rule='evenodd' d='M0 28h400v152H0z M412 78h104l56 62v40H412z M428 92h80l40 44H428z M418 40h8v38h-8z M0 180h590v16H0z M274 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M291 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M332 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M349 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M419 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M436 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M474 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M491 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M530 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M547 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z'/%3E%3C/svg%3E");
-  --truck-svg-blue: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 260'%3E%3Cpath fill='%23121f45' fill-rule='evenodd' d='M0 28h400v152H0z M412 78h104l56 62v40H412z M428 92h80l40 44H428z M418 40h8v38h-8z M0 180h590v16H0z M274 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M291 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M332 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M349 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M419 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M436 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M474 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M491 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M530 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M547 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z'/%3E%3C/svg%3E");
+  --truck-svg-blue: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 260'%3E%3Cpath fill='%23020591' fill-rule='evenodd' d='M0 28h400v152H0z M412 78h104l56 62v40H412z M428 92h80l40 44H428z M418 40h8v38h-8z M0 180h590v16H0z M274 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M291 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M332 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M349 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M419 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M436 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M474 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M491 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z M530 222a26 26 0 1 0 52 0a26 26 0 1 0-52 0z M547 222a9 9 0 1 0 18 0a9 9 0 1 0-18 0z'/%3E%3C/svg%3E");
 }
 .hero, #orcamento { position: relative; overflow: hidden; }
 .hero > .container, #orcamento > .container { position: relative; z-index: 1; }
@@ -435,7 +435,7 @@ body.menu-open { overflow: hidden; }
     position: fixed; left: 0; right: 0; bottom: 0; z-index: 150;
     padding: 8px 12px calc(8px + env(safe-area-inset-bottom, 0px));
     background: var(--white); border-top: 1px solid var(--border);
-    box-shadow: 0 -6px 20px rgba(18,31,69,.1);
+    box-shadow: 0 -6px 20px rgba(5,7,13,.1);
   }
   .mobile-bar a {
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
@@ -452,12 +452,12 @@ body.menu-open { overflow: hidden; }
   .logo-text { font-size: 1.1rem; }
 }
 
-/* ===== Paleta: azul médio, preto e branco (só o WhatsApp fica verde) ===== */
+/* ===== Paleta: azul do logotipo, preto e branco (só o WhatsApp fica verde) ===== */
 :root {
-  --navy: #1a3d7c;
-  --navy-2: #22498f;
+  --navy: #020591;
+  --navy-2: #1a1fc0;
   --black: #05070d;
-  --blue: #1a3d7c;          /* cor principal (antes vermelho) */
+  --blue: #020591;          /* cor principal (antes vermelho) */
   --blue-hover: #000000;
   --blue-vivid: #ffffff;    /* destaques sobre fundo escuro (antes amarelo) */
   --blue-light: #f2f4f8;
@@ -465,7 +465,7 @@ body.menu-open { overflow: hidden; }
   --text: #0d1117;
   --gray: #4f5666;
   --border: #e1e5ec;
-  --accent-grad: linear-gradient(90deg, var(--black) 0%, var(--navy) 50%, #4a72b8 100%);
+  --accent-grad: linear-gradient(90deg, var(--black) 0%, var(--navy) 50%, #4d52e0 100%);
   --shadow: 0 1px 2px rgba(5,7,13,.04), 0 12px 32px rgba(5,7,13,.08);
 }
 
@@ -477,25 +477,25 @@ body.menu-open { overflow: hidden; }
 
 .hero {
   background:
-    radial-gradient(circle at 85% 20%, rgba(74,114,184,.35), transparent 45%),
-    linear-gradient(135deg, var(--navy) 0%, #122c5c 55%, var(--black) 100%);
+    radial-gradient(circle at 85% 20%, rgba(77,82,224,.35), transparent 45%),
+    linear-gradient(135deg, var(--navy) 0%, #01036b 55%, var(--black) 100%);
 }
 .hero h1 span { background: none; color: var(--white); -webkit-background-clip: border-box; background-clip: border-box; text-decoration: underline; text-decoration-color: rgba(255,255,255,.35); text-decoration-thickness: .08em; text-underline-offset: .12em; }
 .tag::before { box-shadow: 0 0 0 4px rgba(255,255,255,.18); }
 .hero-truck { color: var(--white); }
 
 .section-light { background: linear-gradient(180deg, #f7f8fa 0%, #eef1f6 100%); }
-.section-dark { background: radial-gradient(circle at 10% 0%, rgba(34,73,143,.9), transparent 55%), var(--black); }
-.eyebrow { background: rgba(26,61,124,.07); border-color: rgba(26,61,124,.15); }
+.section-dark { background: radial-gradient(circle at 10% 0%, rgba(26,31,192,.9), transparent 55%), var(--black); }
+.eyebrow { background: rgba(2,5,145,.07); border-color: rgba(2,5,145,.15); }
 .eyebrow-light { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.25); }
 
-.icon { background: linear-gradient(135deg, rgba(26,61,124,.08), rgba(5,7,13,.05)); }
+.icon { background: linear-gradient(135deg, rgba(2,5,145,.08), rgba(5,7,13,.05)); }
 .icon-solid, .checks li::before { background: linear-gradient(135deg, var(--navy-2), var(--black)); box-shadow: 0 8px 20px rgba(5,7,13,.25); }
 
-.field input:focus, .field select:focus, .field textarea:focus { box-shadow: 0 0 0 4px rgba(26,61,124,.14); }
+.field input:focus, .field select:focus, .field textarea:focus { box-shadow: 0 0 0 4px rgba(2,5,145,.14); }
 
 .footer { background: var(--black); }
-.footer::before { background: linear-gradient(90deg, var(--navy) 0%, #4a72b8 50%, var(--navy) 100%); }
+.footer::before { background: linear-gradient(90deg, var(--navy) 0%, #4d52e0 50%, var(--navy) 100%); }
 .whatsapp-float { box-shadow: 0 8px 24px rgba(0,0,0,.35); }
 
 @media (max-width: 820px) { .nav { background: var(--black); } }
